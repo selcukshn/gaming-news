@@ -1,0 +1,104 @@
+@inherits LayoutComponentBase
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        box-shadow: none !important;
+        scroll-behavior: smooth;
+    }
+
+    .text-color {
+        color: #ededed;
+    }
+
+    .second-background-color {
+        background-color: #112e42;
+    }
+
+    .main-color {
+        color: #00abf0;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 9%;
+        background-color: #FFFFFF;
+        justify-content: space-between !important;
+        align-items: center !important;
+        z-index: 100 !important;
+    }
+
+    body {
+        background-color: #F8F8F8;
+        color: #ededed;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    #navbar_icon {
+        color: #47494d !important;
+    }
+
+    .c_navbar i {
+        color: #B2B7BF !important;
+        cursor: pointer;
+    }
+
+    #populer_post {
+        position: relative;
+    }
+
+    .populer-img {
+        position: relative;
+    }
+
+    #img-items {
+        display: flex;
+        width: 40vh;
+        position: absolute;
+    }
+
+    #img-item {
+        margin: 30px;
+        position: absolute;
+        display: block;
+    }
+</style>
+<RadzenLayout style="height:100vh">
+    <RadzenHeader class="d-flex header">
+        <RadzenStack class="header" Orientation="Orientation.Horizontal">
+            <div class="logo main-color">
+                Gaming News
+            </div>
+            <div class="d-flex ">
+                <div class="c_navbar">
+                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="search"></RadzenIcon>
+                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="notifications_active">
+                    </RadzenIcon>
+                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="person_outline"></RadzenIcon>
+                </div>
+            </div>
+        </RadzenStack>
+    </RadzenHeader>
+    <RadzenBody>
+        <div class="rz-p-4">
+            @Body
+        </div>
+    </RadzenBody>
+</RadzenLayout>
+@code {
+}
