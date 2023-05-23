@@ -8,8 +8,23 @@
         <div class="col-12">
             <RadzenStack JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Center">
                 <RadzenImage class="populer-img b-rad img-fluid" Path="Images/bg2.jpg">
-
                 </RadzenImage>
+
+                <div id="img-items">
+                    <div id="img-item">
+                        <RadzenText class="text-color" TextStyle="TextStyle.DisplayH4">Lenovo Smarter than
+                            the other
+                            technologies</RadzenText>
+                        <RadzenText class="text-color" style="position: relative;"> Lorem, ipsum dolor sit amet
+                            consectetur
+                            adipisicing elit. Tempore,
+                            deleniti dolor
+                            voluptatem laboriosam porro nam numquam cumque adipisci optio? Atque.<RadzenButton
+                                class="b-rad" ButtonStyle="ButtonStyle.Info" Text="Read more">
+                            </RadzenButton>
+                        </RadzenText>
+                    </div>
+                </div>
                 <div class="d-flex">
                     <div class="col-3 rz-mx-12">
                         <RadzenCard Class="rz-background-color-base-200 card-shadow">
@@ -64,21 +79,6 @@
                                 </RadzenStack>
                             </RadzenStack>
                         </RadzenCard>
-                    </div>
-                </div>
-                <div id="img-items">
-                    <div>
-                        <RadzenText class="text-color" TextStyle="TextStyle.DisplayH4">Lenovo Smarter than
-                            the other
-                            technologies</RadzenText>
-                        <RadzenText class="text-color" style="position: relative;"> Lorem, ipsum dolor sit amet
-                            consectetur
-                            adipisicing elit. Tempore,
-                            deleniti dolor
-                            voluptatem laboriosam porro nam numquam cumque adipisci optio? Atque.<RadzenButton
-                                class="b-rad" id="img-item" ButtonStyle="ButtonStyle.Info" Text="Read more">
-                            </RadzenButton>
-                        </RadzenText>
                     </div>
                 </div>
             </RadzenStack>
@@ -165,9 +165,86 @@
         </div>
     </div>
 </section>
+<section id="most-populer-game-video">
+    <div class="row ">
+        <div class="col-12 d-flex justify-content-center align-items-center my-50">
+            <div>
+                <RadzenText style="text-align:center;" class="text-title-style-2 d-block">Most Populer Game Name
+                </RadzenText>
+                <video src="videos/video.mp4" Play="OnPlay" class="w-100 b-rad" style="max-width:800px;"
+                    controls="controls">
+
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="latest-articles">
+    <div class="row ">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <div class="col-8 d-inline-block ">
+                <div>
+                    <RadzenText class="text-title-style-2">Latest Articles</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Caption" style="font-size: 22px;">Discover the most outstanding
+                        articles in all games</RadzenText>
+                </div>
+                <RadzenCard class="d-inline-block bg-transparent">
+                    <div>
+                        <img src="" alt="">
+                        <p></p>
+                    </div>
+                    <div>
+                        <RadzenImage class="b-rad" Path="Images/square.jpg">
+                        </RadzenImage>
+                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
+                    </div>
+                </RadzenCard>
+                <RadzenCard class="d-inline-block bg-transparent">
+                    <RadzenImage class="b-rad" Path="Images/square.jpg">
+                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
+                    </RadzenImage>
+                </RadzenCard>
+                <RadzenCard class="d-inline-block bg-transparent">
+                    <RadzenImage class="b-rad" Path="Images/square.jpg">
+                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
+                    </RadzenImage>
+                </RadzenCard>
+                <RadzenCard class="d-inline-block bg-transparent">
+                    <RadzenImage class="b-rad" Path="Images/square.jpg">
+                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
+                    </RadzenImage>
+                </RadzenCard>
+                <RadzenCard class="d-inline-block bg-transparent">
+                    <RadzenImage class="b-rad" Path="Images/square.jpg">
+                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
+                    </RadzenImage>
+                </RadzenCard>
+                <RadzenCard class="d-inline-block bg-transparent">
+                    <RadzenImage class="b-rad" Path="Images/square.jpg">
+                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
+                    </RadzenImage>
+                </RadzenCard>
+
+
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+</section>
+
 
 @code {
-
+    void OnPlay(VideoState state)
+    {
+        var url = state.CurrentSrc;
+        // do something with this
+    }
+    void OnTimeUpdate(VideoState state)
+    {
+        var url = state.CurrentSrc;
+        var currentTime = state.CurrentTime;
+        // do something with this
+    }
 
 
 }
