@@ -7,11 +7,10 @@
     <div class="row m-5">
         <div class="col-12">
             <RadzenStack JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Center">
-                <RadzenImage class="populer-img b-rad img-fluid" Path="Images/bg2.jpg">
-                </RadzenImage>
-
                 <div id="img-items">
-                    <div id="img-item">
+                    <RadzenImage class="populer-img b-rad img-fluid mx-auto" Path="Images/bg2.jpg">
+                    </RadzenImage>
+                    <div class="col-8" id="img-item">
                         <RadzenText class="text-color" TextStyle="TextStyle.DisplayH4">Lenovo Smarter than
                             the other
                             technologies</RadzenText>
@@ -19,10 +18,10 @@
                             consectetur
                             adipisicing elit. Tempore,
                             deleniti dolor
-                            voluptatem laboriosam porro nam numquam cumque adipisci optio? Atque.<RadzenButton
-                                class="b-rad" ButtonStyle="ButtonStyle.Info" Text="Read more">
-                            </RadzenButton>
                         </RadzenText>
+                        voluptatem laboriosam porro nam numquam cumque adipisci optio? Atque.<RadzenButton
+                            class="b-rad d-block" ButtonStyle="ButtonStyle.Info" Text="Read more">
+                        </RadzenButton>
                     </div>
                 </div>
                 <div class="d-flex">
@@ -180,54 +179,95 @@
     </div>
 </section>
 <section id="latest-articles">
-    <div class="row ">
-        <div class="col-12 d-flex justify-content-center align-items-center">
-            <div class="col-8 d-inline-block ">
-                <div>
-                    <RadzenText class="text-title-style-2">Latest Articles</RadzenText>
-                    <RadzenText TextStyle="TextStyle.Caption" style="font-size: 22px;">Discover the most outstanding
-                        articles in all games</RadzenText>
-                </div>
-                <RadzenCard class="d-inline-block bg-transparent">
-                    <div>
-                        <img src="" alt="">
-                        <p></p>
+    <div class="container my-50">
+        <RadzenText TextStyle="TextStyle.DisplayH5">Latest Articles</RadzenText>
+        <RadzenText></RadzenText>
+        <div class="row">
+            <div class="col-8">
+                @for (int i = 0; i < 8; i++)
+                {
+                    <div class="d-inline-block" style="position: relative;">
+                        <RadzenCard class="bg-transparent">
+                            <RadzenImage class="b-rad" Path="Images/square2.jpg"></RadzenImage>
+                        </RadzenCard>
+                        <div style="position: absolute;bottom:60px;left:20px;">
+                            <RadzenText style="color:#FFF !important;" TextStyle="TextStyle.Body2">
+                                Lorem ipsum dolor sit amet.
+                            </RadzenText>
+                        </div>
                     </div>
-                    <div>
-                        <RadzenImage class="b-rad" Path="Images/square.jpg">
-                        </RadzenImage>
-                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
+                }
+            </div>
+            <div class="col-4">
+                <RadzenCard style="background-color: #F3F4F6;" class="b-rad">
+                    <div class="d-flex justify-content-between">
+                        <RadzenText class="d-inline-block" TextStyle="TextStyle.H6">More tags</RadzenText>
+                        <RadzenLink style="text-decoration:none !important;color:#4338CA" Path="#" Text="View all">
+                        </RadzenLink>
                     </div>
+                    <hr style="color:#aaaaaa">
+                    <RadzenButton class="custom-btn m-1">Tag(12)</RadzenButton>
+                    <RadzenButton class="custom-btn m-1">Tag(14)</RadzenButton>
+                    <RadzenButton class="custom-btn m-1">Tag(15)</RadzenButton>
+                    <RadzenButton class="custom-btn m-1">Tag(123)</RadzenButton>
+                    <RadzenButton class="custom-btn m-1">Tag(13)</RadzenButton>
+                    <RadzenButton class="custom-btn m-1">Tag(16)</RadzenButton>
+                    <RadzenButton class="custom-btn m-1">Tag(18)</RadzenButton>
                 </RadzenCard>
-                <RadzenCard class="d-inline-block bg-transparent">
-                    <RadzenImage class="b-rad" Path="Images/square.jpg">
-                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
-                    </RadzenImage>
-                </RadzenCard>
-                <RadzenCard class="d-inline-block bg-transparent">
-                    <RadzenImage class="b-rad" Path="Images/square.jpg">
-                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
-                    </RadzenImage>
-                </RadzenCard>
-                <RadzenCard class="d-inline-block bg-transparent">
-                    <RadzenImage class="b-rad" Path="Images/square.jpg">
-                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
-                    </RadzenImage>
-                </RadzenCard>
-                <RadzenCard class="d-inline-block bg-transparent">
-                    <RadzenImage class="b-rad" Path="Images/square.jpg">
-                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
-                    </RadzenImage>
-                </RadzenCard>
-                <RadzenCard class="d-inline-block bg-transparent">
-                    <RadzenImage class="b-rad" Path="Images/square.jpg">
-                        <RadzenText>Lorem ipsum dolor sit amet consectetur adipisicing.</RadzenText>
-                    </RadzenImage>
-                </RadzenCard>
+                <RadzenCard style="background-color: #F3F4F6;" class="my-4 b-rad">
+                    <div class="d-flex justify-content-between">
+                        <RadzenText class="d-inline-block" TextStyle="TextStyle.H6">Discover Authors</RadzenText>
+                        <RadzenLink style="text-decoration:none !important;color:#4338CA" Path="#" Text="View all">
+                        </RadzenLink>
+                    </div>
+                    <hr style="color:#aaaaaa">
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <RadzenCard style="cursor: pointer;" class="bg-transparent">
+                            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
+                                Gap="0.5rem">
+                                <RadzenImage Path="Images/user.jpg"
+                                    Style="width: 50px; height: 50px; border-radius: 50%;" />
+                                <RadzenStack Gap="0">
+                                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex  rz-my-0">
+                                        <b>Jaw ard</b>
+                                    </RadzenText>
+                                    <RadzenText TextStyle="TextStyle.Body1">Author job</RadzenText>
 
+                                </RadzenStack>
+                            </RadzenStack>
+                        </RadzenCard>
+                        <hr style="color:#aaaaaa">
+                    }
+
+                </RadzenCard>
+                <RadzenCard style="background-color: #F3F4F6;" class="b-rad my-4">
+
+                    <div class="d-flex justify-content-between">
+                        <RadzenText class="d-inline-block" TextStyle="TextStyle.H6">More tags</RadzenText>
+                        <RadzenLink style="text-decoration:none !important;color:#4338CA" Path="#" Text="View all">
+                        </RadzenLink>
+                    </div>
+                    <hr style="color:#aaaaaa">
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <RadzenCard class="bg-transparent" style="height:130px;">
+                            <div style="position: relative;">
+                                <RadzenImage Path="Images/user.jpg"
+                                    Style="width: 40px; height: 40px; border-radius: 50%;" />
+
+                                <RadzenText class="d-inline-block" TextStyle="TextStyle.Body1">Jaw Ard</RadzenText>
+                                <RadzenText class="d-block">asdjklasjdasdjklasdjklhasdjkl</RadzenText>
+                                <div id="populer-post-img" style="position:absolute;right:0;top:0;">
+                                    <RadzenImage class="b-rad" Path="Images/smallSquare2.jpg"></RadzenImage>
+                                </div>
+                            </div>
+                        </RadzenCard>
+                        <hr style="color:#aaaaaa">
+                    }
+                </RadzenCard>
 
             </div>
-            <div class="col-4"></div>
         </div>
     </div>
 </section>
