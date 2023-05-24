@@ -1,0 +1,64 @@
+@layout LoginLayout
+@page "/login"
+
+<div class="container m-80">
+    <div class="row">
+        <div class="col-12" style="text-align: center;">
+            <div>
+                <RadzenCard class="b-rad" style="height: 80vh;">
+                    <RadzenStack Orientation="Orientation.Vertical" JustifyContent="JustifyContent.Center"
+                        AlignItems="AlignItems.Center">
+                        <RadzenText class="custom-title-font" TextStyle="TextStyle.DisplayH2">Login</RadzenText>
+                        <RadzenText style="margin-bottom: 50px;" TextStyle="TextStyle.Body1">Welcome to our news
+                            Community</RadzenText>
+                        <RadzenCard class="b-none p-2">
+                            <RadzenStack Orientation="Orientation.Horizontal">
+                                <RadzenImage style="width20px;height:20px" Path="Images/facebook.png"></RadzenImage>
+                                <RadzenText class="card-text-mx">Continue with Facebook</RadzenText>
+                            </RadzenStack>
+                        </RadzenCard>
+                        <RadzenCard class="b-none p-2">
+                            <RadzenStack Orientation="Orientation.Horizontal">
+                                <RadzenImage style="width20px;height:20px" Path="Images/twitter.png"></RadzenImage>
+                                <RadzenText class="card-text-mx">Continue with Facebook</RadzenText>
+                            </RadzenStack>
+                        </RadzenCard>
+                        <RadzenCard class="b-none p-2">
+                            <RadzenStack Orientation="Orientation.Horizontal">
+                                <RadzenImage style="width20px;height:20px" Path="Images/google.png"></RadzenImage>
+                                <RadzenText class="card-text-mx">Continue with Facebook</RadzenText>
+                            </RadzenStack>
+                        </RadzenCard>
+                        <RadzenText TextStyle="TextStyle.DisplayH5">OR</RadzenText>
+                    </RadzenStack>
+                    <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" Gap="0">
+                        <RadzenTemplateForm TItem="Home">
+                            <RadzenStack Gap="1rem">
+                                <RadzenFormField Text="Email adress">
+                                    <ChildContent>
+                                        <RadzenTextBox Name="Email adress" />
+                                    </ChildContent>
+                                    <Helper>
+                                        <RadzenRequiredValidator Component="Email adress"
+                                            Text="Email adress is required." />
+                                    </Helper>
+                                </RadzenFormField>
+                                <RadzenFormField Text="Password">
+                                    <RadzenPassword @bind-Value=@value Placeholder="Enter password..." />
+                                </RadzenFormField>
+                                <RadzenButton class="b-rad" ButtonType="ButtonType.Submit" Text="Continue">
+                                </RadzenButton>
+                                <RadzenText>New User?<RadzenLink Path="#">Create an account</RadzenLink>
+                                </RadzenText>
+                            </RadzenStack>
+                        </RadzenTemplateForm>
+                    </RadzenStack>
+                </RadzenCard>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    string value;
+}
