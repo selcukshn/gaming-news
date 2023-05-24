@@ -1,0 +1,64 @@
+@layout CategoriesLayout
+@page "/categories"
+
+<div class="container my-40">
+    <div class="row">
+        <div class="col-12 ">
+            <RadzenCard>
+                <RadzenDropDown class="m-2" Style="width:300px" TValue="string" @bind-Value="CustomerID"
+                    Placeholder="Other Categories" AllowFiltering="true" Data="@(customers)" TextProperty="CompanyName"
+                    ValueProperty="CustomerID" />
+
+                <RadzenDropDown class="m-2" Style="width:300px" TValue="string" @bind-Value="CustomerID"
+                    Placeholder="Other Tags" AllowFiltering="true" Data="@(customers)" TextProperty="CompanyName"
+                    ValueProperty="CustomerID" />
+                <RadzenDropDown class="m-1" Style="width:300px;" TValue="string" @bind-Value="CustomerID"
+                    Placeholder="Most Recent" AllowFiltering="true" Data="@(customers)" TextProperty="CompanyName"
+                    ValueProperty="CustomerID" />
+            </RadzenCard>
+            @* Body Card *@
+            @for (int i = 0; i < 9; i++)
+            {
+                <div class="col-3 my-20 d-flex">
+                    <RadzenCard class="radius-tl-tr bg-transparent" style="border: none;box-shadow:none;">
+                        <div>
+                            <RadzenImage class="radius-tl-tr" style="width:100%" Path="Images/bg2.jpg"></RadzenImage>
+                        </div>
+                        <div class="mx-1 my-2">
+                            <RadzenImage class="rounded-circle" style="width:30px; height:30px;" Path="Images/user.jpg">
+                            </RadzenImage>
+                            <RadzenText TextStyle="TextStyle.Caption">Hanna Pele</RadzenText>
+                        </div>
+                        <div>
+                            <RadzenText class="card-text">Lenovo's smarter devices stoke
+                                professinol passions
+                            </RadzenText>
+                        </div>
+                        <div class="my-3 mx-2">
+                            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End">
+                                <RadzenIcon class="customize-icon" Icon="favorite_border"></RadzenIcon>
+                                <RadzenIcon class="customize-icon" Icon="chat_bubble_outline"></RadzenIcon>
+                                <RadzenIcon class="customize-icon" Icon="bookmark_border">
+                                </RadzenIcon>
+                            </RadzenStack>
+                        </div>
+                    </RadzenCard>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+
+@code {
+    IEnumerable<string> customers;
+    IEnumerable<string> orderDetails;
+
+    string CustomerID = "1";
+    int OrderID = 1;
+
+
+}
