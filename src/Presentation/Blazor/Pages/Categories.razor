@@ -17,10 +17,11 @@
                     ValueProperty="CustomerID" />
             </RadzenCard>
             @* Body Card *@
+                <div class="row my-20 d-flex">
             @for (int i = 0; i < 9; i++)
             {
-                <div class="col-3 my-20 d-flex">
-                    <RadzenCard class="radius-tl-tr bg-transparent" style="border: none;box-shadow:none;">
+                <div class="col-3">
+                    <RadzenCard class="radius-tl-tr" style="border: none;box-shadow:none;background-color: #FFFFFF;">
                         <div>
                             <RadzenImage class="radius-tl-tr" style="width:100%" Path="Images/bg2.jpg"></RadzenImage>
                         </div>
@@ -43,8 +44,9 @@
                             </RadzenStack>
                         </div>
                     </RadzenCard>
-                </div>
+                    </div>
             }
+                </div>
 
         </div>
     </div>
