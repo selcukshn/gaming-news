@@ -1,0 +1,177 @@
+@inherits LayoutComponentBase
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        box-shadow: none !important;
+        scroll-behavior: smooth;
+    }
+
+    img {
+        overflow: clip;
+    }
+
+
+    .text-color {
+        color: #ededed;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .second-background-color {
+        background-color: #112e42;
+    }
+
+    .main-color {
+        color: #00abf0;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 9%;
+        background-color: #FFFFFF;
+        justify-content: space-between !important;
+        align-items: center !important;
+        z-index: 100 !important;
+    }
+
+    body {
+        padding: 0 !important;
+        background-color: #F8F8F8;
+        color: #ededed;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    #navbar_icon {
+        color: #47494d !important;
+    }
+
+    .c_navbar i {
+        color: #B2B7BF !important;
+        cursor: pointer;
+    }
+
+    #populer_post {
+        position: relative;
+    }
+
+    .populer-img {
+        position: relative;
+    }
+
+    #img-items {
+        text-align: start;
+        display: flex;
+        width: 100%;
+        position: relative;
+    }
+
+    #img-item {
+        position: absolute;
+        display: block;
+        width: 600px;
+        top: 20%;
+        left: calc(50% - 300px);
+    }
+
+    .text-color {
+        color: #ededed;
+        font-weight: 900;
+        font-size: 26px;
+
+    }
+
+    .b-rad {
+        border-radius: 30px;
+    }
+
+    .card-shadow {
+        border: 1px solid #BFBFBF !important;
+        box-shadow: 10px 10px 20px #aaaaaa !important;
+    }
+
+    .text-title-style {
+        color: black;
+        letter-spacing: 2px;
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    .text-title-style-2 {
+        color: black;
+        letter-spacing: 1.5px;
+        font-weight: 800;
+        font-size: 26px;
+    }
+
+    .my-20 {
+        margin-top: 40px;
+    }
+
+    .radius-tl-tr {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+
+    .customize-icon {
+        font-size: 16px;
+        color: #47494d;
+        font-weight: 700;
+    }
+
+    .my-50 {
+        margin-top: 100px;
+
+    }
+
+
+    .custom-btn {
+        background-color: #FFF !important;
+        color: #aaaaaa !important;
+        text-transform: none !important;
+        outline-color: transparent;
+
+
+    }
+</style>
+<RadzenLayout style="height:100vh">
+    <RadzenHeader class="d-flex header">
+        <RadzenStack class="header" Orientation="Orientation.Horizontal">
+            <div class="logo main-color">
+                Gaming News
+            </div>
+            <div>
+
+            </div>
+            <div class="d-flex">
+                <div class="c_navbar">
+                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="search"></RadzenIcon>
+                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="notifications_active">
+                    </RadzenIcon>
+                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="person_outline"></RadzenIcon>
+                </div>
+            </div>
+        </RadzenStack>
+    </RadzenHeader>
+    <RadzenBody>
+        <div>
+            @Body
+        </div>
+    </RadzenBody>
+</RadzenLayout>
+@code {
+}

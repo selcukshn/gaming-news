@@ -1,0 +1,91 @@
+@layout Shared.ProfileLayout
+@page "/profile"
+
+<div>
+    <div>
+        <RadzenImage style="width: 100%;height: 40vh;" Path="Images/bg2.jpg"></RadzenImage>
+    </div>
+    <div class="container">
+        <div class="row">
+            <RadzenCard class="b-rad d-flex">
+                <div class="col-3 my-3 justify-content-center align-items-center">
+                    <RadzenImage class="rounded-circle" Path="Images/user.jpg" style="width: 70%;height:70%;">
+                    </RadzenImage>
+                </div>
+                <div class="col-6 my-3">
+                    <RadzenText class="py-2" TextStyle="TextStyle.DisplayH6">Dony Herrera</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Caption">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit.
+                        Sequi
+                        provident, sunt fuga dolor at perspiciatis ex placeat eos iure magni atque saepe deleniti dolore
+                        in
+                        illum laborum modi exercitationem nam.</RadzenText>
+                    <div class="py-1">
+                        <RadzenLink Path="#">https://example.com</RadzenLink>
+                    </div>
+                    <RadzenStack class="my-2" Orientation="Orientation.Horizontal"
+                        JustifyContent="JustifyContent.Start">
+                        <RadzenImage Path="Images/facebook.png" style="height: 20px;width:20px;"></RadzenImage>
+                        <RadzenImage Path="Images/twitter.png" style="height: 20px;width:20px;"></RadzenImage>
+                        <RadzenImage Path="Images/google.png" style="height: 20px;width:20px;"></RadzenImage>
+                    </RadzenStack>
+                </div>
+                <div class="col-3 my-3">
+                    <RadzenStack Orientation="Orientation.Vertical">
+
+                        <RadzenButton class="b-rad" style="width: 150px;" Icon="add" Text="Follow"></RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" style="width: 30px;" class="rounded-circle"
+                            Icon="share"></RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Light" style="width: 30px;" class="rounded-circle"
+                            Icon="more_horiz"></RadzenButton>
+                    </RadzenStack>
+                </div>
+            </RadzenCard>
+            <div class="row ">
+                <div class="col-12 d-flex">
+                    <div class="col-4" style="display: inline-block !important;">
+                        <RadzenButton ButtonStyle="ButtonStyle.Dark" class="b-rad" Text="Articles"></RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Dark" class="b-rad" Text="Favorites"></RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Dark" class="b-rad" Text="Saved"></RadzenButton>
+
+                    </div>
+                    <div class="col-10" style="display: inline-block !important;text-align: center;margin-left:100px;">
+                        <RadzenButton ButtonStyle="ButtonStyle.Dark" class="b-rad" Text="Most Recent"></RadzenButton>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row my-20 d-flex">
+            @for (int i = 0; i < 9; i++)
+            {
+                <div class="col-3">
+                    <RadzenCard class="radius-tl-tr bg-transparent" style="border: none;box-shadow:none;">
+                        <div>
+                            <RadzenImage class="radius-tl-tr" style="width:100%" Path="Images/bg2.jpg"></RadzenImage>
+                        </div>
+                        <div class="mx-1 my-2">
+                            <RadzenImage class="rounded-circle" style="width:30px; height:30px;" Path="Images/user.jpg">
+                            </RadzenImage>
+                            <RadzenText TextStyle="TextStyle.Caption">Hanna Pele</RadzenText>
+                        </div>
+                        <div>
+                            <RadzenText class="card-text">Lenovo's smarter devices stoke
+                                professinol passions
+                            </RadzenText>
+                        </div>
+                        <div class="my-3 mx-2">
+                            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End">
+                                <RadzenIcon class="customize-icon" Icon="favorite_border"></RadzenIcon>
+                                <RadzenIcon class="customize-icon" Icon="chat_bubble_outline"></RadzenIcon>
+                                <RadzenIcon class="customize-icon" Icon="bookmark_border">
+                                </RadzenIcon>
+                            </RadzenStack>
+                        </div>
+                    </RadzenCard>
+                    </div>
+            }
+                </div>
+        </div>
+
+    </div>
+</div>
