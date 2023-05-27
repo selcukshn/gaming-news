@@ -25,11 +25,13 @@
                     </div>
                 </div>
                 <div class="container">
+                    <div class="row">
                     <div class="col-12 d-flex">
+                        <RadzenStack JustifyContent="JustifyContent.Center" Orientation="Orientation.Horizontal" Gap="1rem">
                         @for (int i = 0; i < 3; i++)
                         {
-                            <div class="col-3 rz-mx-12">
-                                <RadzenCard style="background-color: #F8F8F8;" Class="card-shadow b-rad">
+                            <div class="col-3 ">
+                                <RadzenCard style="background-color: #F8F8F8;" Class="card-shadow b-rad ">
                                     <RadzenText TextStyle="TextStyle.Body2" class="rz-display-flex rz-mt-2 rz-my-0">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. In, temporibus!
                                     </RadzenText>
@@ -47,6 +49,8 @@
                                 </RadzenCard>
                             </div>
                         }
+                        </RadzenStack>
+                    </div>
                     </div>
                 </div>
             </RadzenStack>

@@ -32,7 +32,6 @@
         width: 100%;
         padding: 1rem 9%;
         background-color: #FFFFFF;
-        justify-content: space-between !important;
         align-items: center !important;
         z-index: 100 !important;
     }
@@ -150,6 +149,14 @@
         color: #47494d;
         font-weight: 700;
     }
+
+    .mr-l {
+        margin-left: auto !important;
+    }
+
+    .rz-dropdown-trigger-icon {
+        font-size: 0 !important;
+    }
 </style>
 <RadzenLayout style="height:100vh">
     <RadzenHeader class="d-flex header">
@@ -157,13 +164,15 @@
             <div class="logo main-color">
                 Gaming News
             </div>
-            <div class="d-flex ">
-                <div class="c_navbar">
-                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="search"></RadzenIcon>
-                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="notifications_active">
-                    </RadzenIcon>
-                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="person_outline"></RadzenIcon>
-                </div>
+            <div class="rz-mx-12">
+                <RadzenDropDownDataGrid Placeholder="Categories" AllowClear="true" @bind-Value=value
+                    AllowFiltering="true" Data=@value />
+            </div>
+            <div class="c_navbar mr-l">
+                <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="search"></RadzenIcon>
+                <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="notifications_active">
+                </RadzenIcon>
+                <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="person_outline"></RadzenIcon>
             </div>
         </RadzenStack>
     </RadzenHeader>
@@ -173,3 +182,6 @@
         </div>
     </RadzenBody>
 </RadzenLayout>
+@code {
+    string value;
+}
