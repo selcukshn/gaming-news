@@ -24,60 +24,29 @@
                         </RadzenButton>
                     </div>
                 </div>
-                <div class="d-flex">
-                    <div class="col-3 rz-mx-12">
-                        <RadzenCard Class="rz-background-color-base-200 card-shadow">
-                            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
-                                Gap="1rem" Class="rz-p-4">
-                                <RadzenImage Path="Images/user.jpg"
-                                    Style="width: 100px; height: 100px; border-radius: 50%;" />
-                                <RadzenStack Gap="0">
-                                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">
-                                        Employee</RadzenText>
-                                    <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b></RadzenText>
-                                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">
-                                        Company</RadzenText>
-                                    <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b>
+                <div class="container">
+                    <div class="col-12 d-flex">
+                        @for (int i = 0; i < 3; i++)
+                        {
+                            <div class="col-3 rz-mx-12">
+                                <RadzenCard style="background-color: #F8F8F8;" Class="card-shadow b-rad">
+                                    <RadzenText TextStyle="TextStyle.Body2" class="rz-display-flex rz-mt-2 rz-my-0">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, temporibus!
                                     </RadzenText>
-                                </RadzenStack>
-                            </RadzenStack>
-                        </RadzenCard>
-                    </div>
-                    <div class="col-3 rz-mx-12">
-                        <RadzenCard Class="rz-background-color-base-200 card-shadow">
-                            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
-                                Gap="1rem" Class="rz-p-4">
-                                <RadzenImage Path="Images/user.jpg"
-                                    Style="width: 100px; height: 100px; border-radius: 50%;" />
-                                <RadzenStack Gap="0">
-                                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">
-                                        Employee</RadzenText>
-                                    <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b></RadzenText>
-                                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">
-                                        Company</RadzenText>
-                                    <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b>
-                                    </RadzenText>
-                                </RadzenStack>
-                            </RadzenStack>
-                        </RadzenCard>
-                    </div>
-                    <div class="col-3 rz-mx-12">
-                        <RadzenCard Class="rz-background-color-base-200 card-shadow">
-                            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
-                                Gap="1rem" Class="rz-p-4">
-                                <RadzenImage Path="Images/user.jpg"
-                                    Style="width: 100px; height: 100px; border-radius: 50%;" />
-                                <RadzenStack Gap="0">
-                                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">
-                                        Employee</RadzenText>
-                                    <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b></RadzenText>
-                                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">
-                                        Company</RadzenText>
-                                    <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b>
-                                    </RadzenText>
-                                </RadzenStack>
-                            </RadzenStack>
-                        </RadzenCard>
+                                    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
+                                        Gap="1rem" Class="rz-p-4">
+                                        <RadzenImage Path="Images/user.jpg"
+                                            Style="width: 50px; height: 50px; border-radius: 50%;" />
+                                        <RadzenStack Gap="0">
+                                            <RadzenText TextStyle="TextStyle.Caption"><b>Hanna Jager</b></RadzenText>
+
+                                            <RadzenText TextStyle="TextStyle.Caption"><b>May-12-23</b>
+                                            </RadzenText>
+                                        </RadzenStack>
+                                    </RadzenStack>
+                                </RadzenCard>
+                            </div>
+                        }
                     </div>
                 </div>
             </RadzenStack>
@@ -86,94 +55,72 @@
 </section>
 <section id="top_trending_games">
 
-    <div id=""></div>
-    <RadzenText class="text-title-style">Top Trending Games</RadzenText>
-    <RadzenText class="d-block my-3" TextStyle="TextStyle.Caption ">Discover trend
-        games</RadzenText>
 
-    <div class="row d-flex">
-        <div class="col-12 d-flex">
-            <div class="col-3">
-                <RadzenCard Class="rz-background-color-base-200 card-shadow">
-                    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
-                        Class="rz-p-4">
-                        <RadzenImage Path="Images/user.jpg" Style="width: 100px; height: 100px; border-radius: 50%;" />
-                        <RadzenStack Gap="0">
-                            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">
-                                Employee</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b></RadzenText>
-                            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">
-                                Company</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b>
-                            </RadzenText>
-                        </RadzenStack>
-                    </RadzenStack>
-                </RadzenCard>
-            </div>
-            <div class="col-3">
-                <RadzenCard Class="rz-background-color-base-200 card-shadow">
-                    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
-                        Class="rz-p-4">
-                        <RadzenImage Path="Images/user.jpg" Style="width: 100px; height: 100px; border-radius: 50%;" />
-                        <RadzenStack Gap="0">
-                            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">
-                                Employee</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b></RadzenText>
-                            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">
-                                Company</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b>
-                            </RadzenText>
-                        </RadzenStack>
-                    </RadzenStack>
-                </RadzenCard>
-            </div>
-            <div class="col-3">
-                <RadzenCard Class="rz-background-color-base-200 card-shadow">
-                    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
-                        Class="rz-p-4">
-                        <RadzenImage Path="Images/user.jpg" Style="width: 100px; height: 100px; border-radius: 50%;" />
-                        <RadzenStack Gap="0">
-                            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">
-                                Employee</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b></RadzenText>
-                            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">
-                                Company</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b>
-                            </RadzenText>
-                        </RadzenStack>
-                    </RadzenStack>
-                </RadzenCard>
-            </div>
-            <div class="col-3">
-                <RadzenCard Class="rz-background-color-base-200 card-shadow">
-                    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
-                        Class="rz-p-4">
-                        <RadzenImage Path="Images/user.jpg" Style="width: 100px; height: 100px; border-radius: 50%;" />
-                        <RadzenStack Gap="0">
-                            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">
-                                Employee</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b></RadzenText>
-                            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">
-                                Company</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body1"><b>Deneme</b>
-                            </RadzenText>
-                        </RadzenStack>
-                    </RadzenStack>
-                </RadzenCard>
+
+    <div class="container">
+        <RadzenText class="text-title-style">Top Trending Games</RadzenText>
+        <RadzenText class="d-block my-3" TextStyle="TextStyle.Caption ">Discover trend
+            games</RadzenText>
+        <div class="row ">
+            <div class="col-12">
+                <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Center"
+                    AlignItems="AlignItems.Center" Gap="2.5rem">
+                    @for (int i = 0; i < 4; i++)
+                    {
+                        <div class="col-3">
+                            <RadzenCard
+                                style="border:none !important;box-shadow:none !important;background-color:transparent;padding: 0;"
+                                Class="b-rad card-shadow">
+                                <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
+                                    Class="rz-p-4">
+                                    <div style="position: relative;">
+                                        <RadzenImage class="b-rad" Path="Images/square.jpg"
+                                            Style="width: 100%; height: 100%; " />
+                                        <RadzenStack style="position: absolute;top:10px;right: 10px;" Gap="0">
+                                            <RadzenButton class="b-rad" ButtonStyle="ButtonStyle.Light">13</RadzenButton>
+                                        </RadzenStack>
+                                        <RadzenStack Style="position: absolute;top:45%;left:35%"
+                                            JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Center">
+                                            <RadzenButton class="b-rad" ButtonStyle="ButtonStyle.Light">MMORPG
+                                            </RadzenButton>
+                                        </RadzenStack>
+                                    </div>
+                                </RadzenStack>
+                            </RadzenCard>
+                        </div>
+                    }
+
+
+                </RadzenStack>
             </div>
         </div>
     </div>
 </section>
 <section id="most-populer-game-video">
-    <div class="row ">
-        <div class="col-12 d-flex justify-content-center align-items-center my-50">
-            <div>
-                <RadzenText style="text-align:center;" class="text-title-style-2 d-block">Most Populer Game Name
-                </RadzenText>
-                <video src="videos/video.mp4" Play="OnPlay" class="w-100 b-rad" style="max-width:800px;"
-                    controls="controls">
-
-                </video>
+    <hr style="color:#aaaaaa">
+    <div class="container">
+        <div class="row ">
+            <div class="col-12 align-items-center my-50">
+                <div>
+                    <RadzenStack style="text-align: center;" Orientation="Orientation.Horizontal">
+                        <div class="col-6">
+                            <video src="videos/video.mp4" Play="OnPlay" class="w-100 b-rad" style="max-width:800px;"
+                                controls="controls">
+                            </video>
+                        </div>
+                        <div class="col-6">
+                            <RadzenText class="text-title-style-2 ">GTA 8 KANANDRES
+                            </RadzenText>
+                            <RadzenText TextStyle="TextStyle.Body2">Lorem ipsum dolor sit amet consectetur,
+                                adipisicing
+                                elit. Eos, doloribus recusandae nulla deleniti excepturi nisi explicabo assumenda dolor
+                                optio vel illum repudiandae ducimus provident deserunt ut facere incidunt animi dolores
+                                dolorem sed ipsam inventore cumque suscipit alias! Eum reiciendis iusto, dignissimos
+                                doloribus deserunt illum harum! Officiis, repellendus! Expedita, corporis saepe.
+                            </RadzenText>
+                        </div>
+                    </RadzenStack>
+                </div>
             </div>
         </div>
     </div>
