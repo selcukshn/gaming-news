@@ -93,38 +93,32 @@
 <section id="most-populer-game-video">
     <hr style="color:#aaaaaa">
     <div class="container">
-        <div class="row ">
-            <div class="col-12 align-items-center my-50">
-                <div>
-                    <RadzenStack style="text-align: center;" Orientation="Orientation.Horizontal">
-                        <div class="col-6">
-                            <video src="videos/video.mp4" Play="OnPlay" class="w-100 b-rad" style="max-width:800px;"
-                                controls="controls">
-                            </video>
-                        </div>
-                        <div class="col-6">
-                            <RadzenText class="text-title-style-2 ">GTA 8 KANANDRES
-                            </RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body2">Lorem ipsum dolor sit amet consectetur,
-                                adipisicing
-                                elit. Eos, doloribus recusandae nulla deleniti excepturi nisi explicabo assumenda dolor
-                                optio vel illum repudiandae ducimus provident deserunt ut facere incidunt animi dolores
-                                dolorem sed ipsam inventore cumque suscipit alias! Eum reiciendis iusto, dignissimos
-                                doloribus deserunt illum harum! Officiis, repellendus! Expedita, corporis saepe.
-                            </RadzenText>
-                        </div>
-                    </RadzenStack>
-                </div>
+        <div class="row my-50 row-cols-lg-2 row-cols-md-2 row-cols-sm-1">
+            <div class="col">
+                <RadzenText class="text-title-style-2 ">GTA 8 KANANDRES
+                </RadzenText>
+                <RadzenText TextStyle="TextStyle.Body2">Lorem ipsum dolor sit amet consectetur,
+                    adipisicing
+                    elit. Eos, doloribus recusandae nulla deleniti excepturi nisi explicabo assumenda dolor
+                    optio vel illum repudiandae ducimus provident deserunt ut facere incidunt animi dolores
+                    dolorem sed ipsam inventore cumque suscipit alias! Eum reiciendis iusto, dignissimos
+                    doloribus deserunt illum harum! Officiis, repellendus! Expedita, corporis saepe.
+                </RadzenText>
+            </div>
+            <div class="col">
+                <video src="videos/video.mp4" Play="OnPlay" class="w-100 b-rad" style="max-width:800px;"
+                    controls="controls">
+                </video>
             </div>
         </div>
     </div>
 </section>
 <section id="latest-articles">
     <div class="container my-50">
-        <RadzenText TextStyle="TextStyle.DisplayH5">Latest Articles</RadzenText>
-        <RadzenText></RadzenText>
-        <div class="row">
-            <div class="col-8">
+        <div class="row ">
+            <div class="col-8 col-md-8 col-sm-4">
+                <RadzenText TextStyle="TextStyle.DisplayH5">Latest Articles</RadzenText>
+                <RadzenText>Discover the most outstanding articles in all topics of life.</RadzenText>
                 @for (int i = 0; i < 8; i++)
                 {
                     <div class="d-inline-block" style="position: relative;">
@@ -139,7 +133,7 @@
                     </div>
                 }
             </div>
-            <div class="col-4">
+            <div class="col-4 col-md-4 col-sm-2">
                 <RadzenCard style="background-color: #F3F4F6;" class="b-rad">
                     <div class="d-flex justify-content-between">
                         <RadzenText class="d-inline-block" TextStyle="TextStyle.H6">More tags</RadzenText>
