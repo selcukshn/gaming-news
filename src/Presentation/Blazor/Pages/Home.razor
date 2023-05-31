@@ -93,7 +93,7 @@
 <section id="most-populer-game-video">
     <hr style="color:#aaaaaa">
     <div class="container">
-        <div class="row my-50 row-cols-lg-2 row-cols-md-2 row-cols-sm-1">
+        <div class="row my-50 row-cols-1  row-cols-md-2 ">
             <div class="col">
                 <RadzenText class="text-title-style-2 ">GTA 8 KANANDRES
                 </RadzenText>
@@ -105,7 +105,7 @@
                     doloribus deserunt illum harum! Officiis, repellendus! Expedita, corporis saepe.
                 </RadzenText>
             </div>
-            <div class="col">
+            <div class="col mt-3">
                 <video src="videos/video.mp4" Play="OnPlay" class="w-100 b-rad" style="max-width:800px;"
                     controls="controls">
                 </video>
@@ -116,24 +116,27 @@
 <section id="latest-articles">
     <div class="container my-50">
         <div class="row ">
-            <div class="col-8 col-md-8 col-sm-4">
+            <div class="col-12 col-lg-8 ">
                 <RadzenText TextStyle="TextStyle.DisplayH5">Latest Articles</RadzenText>
                 <RadzenText>Discover the most outstanding articles in all topics of life.</RadzenText>
-                @for (int i = 0; i < 8; i++)
-                {
-                    <div class="d-inline-block" style="position: relative;">
-                        <RadzenCard class="bg-transparent">
-                            <RadzenImage class="b-rad" Path="Images/square2.jpg"></RadzenImage>
-                        </RadzenCard>
-                        <div style="position: absolute;bottom:60px;left:20px;">
-                            <RadzenText style="color:#FFF !important;" TextStyle="TextStyle.Body2">
-                                Lorem ipsum dolor sit amet.
-                            </RadzenText>
+                <div class="row g-1">
+
+                    @for (int i = 0; i < 8; i++)
+                    {
+                        <div class="col-12 col-md-6 position-relative">
+                            <RadzenCard class="bg-transparent text-center">
+                                <RadzenImage class="b-rad img-fluid" Path="Images/square2.jpg"></RadzenImage>
+                            </RadzenCard>
+                            <div style="position: absolute;bottom:60px;left:50px;">
+                                <RadzenText style="color:#FFF !important;" TextStyle="TextStyle.Body2">
+                                    Lorem ipsum dolor sit amet.
+                                </RadzenText>
+                            </div>
                         </div>
-                    </div>
-                }
+                    }
+                </div>
             </div>
-            <div class="col-4 col-md-4 col-sm-2">
+            <div class="col-12 col-lg-4">
                 <RadzenCard style="background-color: #F3F4F6;" class="b-rad">
                     <div class="d-flex justify-content-between">
                         <RadzenText class="d-inline-block" TextStyle="TextStyle.H6">More tags</RadzenText>
