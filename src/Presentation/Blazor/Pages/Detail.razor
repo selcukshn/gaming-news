@@ -1,0 +1,101 @@
+@layout HomeLayout
+@page "/detail"
+
+<div class="my-20">
+    <RadzenImage style="height:350px; object-fit: cover;" class="img-fluid w-100" Path="Images/banner.jpg">
+    </RadzenImage>
+</div>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-8 text-black">
+
+            <div class="tags">
+                <RadzenButton style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Light">Rpg</RadzenButton>
+                <RadzenButton style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Light">Fps</RadzenButton>
+                <RadzenButton style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Light">MMO</RadzenButton>
+                <RadzenButton style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Light">Clash</RadzenButton>
+                <RadzenButton style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Light">Of</RadzenButton>
+                <RadzenButton style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Light">Clans</RadzenButton>
+                <RadzenButton style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Light">Savaş</RadzenButton>
+            </div>
+            <hr style="color:#aaaaaa">
+            <div class="comments">
+                <RadzenCard>
+                    <RadzenStack JustifyContent="JustifyContent.Start">
+                        <RadzenImage style="width:70px" class="b-rad" Path="Images/user.jpg"></RadzenImage>
+                        <RadzenText class="d-inline-block" Text="Written By" TextStyle="TextStyle.Caption"></RadzenText>
+                        <RadzenText class="d-inline-block" TextStyle="TextStyle.Subtitle2">Birrell Chariot</RadzenText>
+                        <RadzenText class="d-inline-block"></RadzenText>
+                    </RadzenStack>
+
+                </RadzenCard>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4">
+            <RadzenCard style="background-color: #F3F4F6;" class="b-rad">
+                <div class="d-flex justify-content-between">
+                    <RadzenText class="d-inline-block" TextStyle="TextStyle.H6">More tags</RadzenText>
+                    <RadzenLink style="text-decoration:none !important;color:#4338CA" Path="#" Text="View all">
+                    </RadzenLink>
+                </div>
+                <hr style="color:#aaaaaa">
+                <RadzenButton class="custom-btn m-1">Tag(12)</RadzenButton>
+                <RadzenButton class="custom-btn m-1">Tag(14)</RadzenButton>
+                <RadzenButton class="custom-btn m-1">Tag(15)</RadzenButton>
+                <RadzenButton class="custom-btn m-1">Tag(123)</RadzenButton>
+                <RadzenButton class="custom-btn m-1">Tag(13)</RadzenButton>
+                <RadzenButton class="custom-btn m-1">Tag(16)</RadzenButton>
+                <RadzenButton class="custom-btn m-1">Tag(18)</RadzenButton>
+            </RadzenCard>
+            <RadzenCard style="background-color: #F3F4F6;" class="my-4 b-rad">
+                <div class="d-flex justify-content-between">
+                    <RadzenText class="d-inline-block" TextStyle="TextStyle.H6">Discover Authors</RadzenText>
+                    <RadzenLink style="text-decoration:none !important;color:#4338CA" Path="#" Text="View all">
+                    </RadzenLink>
+                </div>
+                <hr style="color:#aaaaaa">
+                @for (int i = 0; i < 4; i++)
+                {
+                    <RadzenCard style="cursor: pointer;" class="bg-transparent">
+                        <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Start"
+                            Gap="0.5rem">
+                            <RadzenImage Path="Images/user.jpg" Style="width: 50px; height: 50px; border-radius: 50%;" />
+                            <RadzenStack Gap="0">
+                                <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex  rz-my-0">
+                                    <b>Jaw ard</b>
+                                </RadzenText>
+                                <RadzenText TextStyle="TextStyle.Body1">Author job</RadzenText>
+
+                            </RadzenStack>
+                        </RadzenStack>
+                    </RadzenCard>
+                    <hr style="color:#aaaaaa">
+                }
+            </RadzenCard>
+            <RadzenCard style="background-color: #F3F4F6;" class="b-rad my-4">
+                <div class="d-flex justify-content-between">
+                    <RadzenText class="d-inline-block" TextStyle="TextStyle.H6">More tags</RadzenText>
+                    <RadzenLink style="text-decoration:none !important;color:#4338CA" Path="#" Text="View all">
+                    </RadzenLink>
+                </div>
+                <hr style="color:#aaaaaa">
+                @for (int i = 0; i < 4; i++)
+                {
+                    <RadzenCard class="bg-transparent" style="height:130px;">
+                        <div style="position: relative;">
+                            <RadzenImage Path="Images/user.jpg" Style="width: 40px; height: 40px; border-radius: 50%;" />
+
+                            <RadzenText class="d-inline-block" TextStyle="TextStyle.Body1">Jaw Ard</RadzenText>
+                            <RadzenText class="d-block">asdjklasjdasdjklasdjklhasdjkl</RadzenText>
+                            <div id="populer-post-img" style="position:absolute;right:0;top:0;">
+                                <RadzenImage class="b-rad" Path="Images/smallSquare2.jpg"></RadzenImage>
+                            </div>
+                        </div>
+                    </RadzenCard>
+                    <hr style="color:#aaaaaa">
+                }
+            </RadzenCard>
+
+        </div>
+    </div>
+</div>

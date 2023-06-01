@@ -1,8 +1,5 @@
 @page "/home"
 @layout Shared.HomeLayout
-
-
-
 <section id="populer_post">
     <div class="row m-5">
         <div class="col-12">
@@ -177,10 +174,8 @@
                         </RadzenCard>
                         <hr style="color:#aaaaaa">
                     }
-
                 </RadzenCard>
                 <RadzenCard style="background-color: #F3F4F6;" class="b-rad my-4">
-
                     <div class="d-flex justify-content-between">
                         <RadzenText class="d-inline-block" TextStyle="TextStyle.H6">More tags</RadzenText>
                         <RadzenLink style="text-decoration:none !important;color:#4338CA" Path="#" Text="View all">
@@ -209,8 +204,6 @@
         </div>
     </div>
 </section>
-
-
 @code {
     void OnPlay(VideoState state)
     {
@@ -223,6 +216,4 @@
         var currentTime = state.CurrentTime;
         // do something with this
     }
-
-
 }
