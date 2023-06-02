@@ -1,14 +1,12 @@
 @layout HomeLayout
 @page "/detail"
-
 <div class="my-20">
     <RadzenImage style="height:350px; object-fit: cover;" class="img-fluid w-100" Path="Images/banner.jpg">
     </RadzenImage>
 </div>
 <div class="container my-5">
     <div class="row">
-        <div class="col-8 text-black">
-
+        <div class="col-12 col-md-8 text-black">
             <div class="tags">
                 <RadzenButton style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Light">Rpg</RadzenButton>
                 <RadzenButton style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Light">Fps</RadzenButton>
@@ -60,7 +58,6 @@
                         Cancel
                     </RadzenButton>
                 </RadzenCard>
-
             </div>
             @for (int i = 0; i < 5; i++)
             {
@@ -81,7 +78,6 @@
                                     ButtonStyle="ButtonStyle.Light" Icon="reply" Text="Reply">
                                 </RadzenButton>
                             </div>
-
                         </RadzenCard>
                     </div>
                 </div>
@@ -91,7 +87,6 @@
                     Text="View full comments (+117 comments)">
                 </RadzenButton>
             </div>
-
         </div>
         <div class="col-12 col-lg-4">
             <RadzenCard style="background-color: #F3F4F6;" class="b-rad">
