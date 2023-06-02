@@ -19,17 +19,79 @@
                 <RadzenButton style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Light">Savaş</RadzenButton>
             </div>
             <hr style="color:#aaaaaa">
-            <div class="comments">
-                <RadzenCard>
-                    <RadzenStack JustifyContent="JustifyContent.Start">
-                        <RadzenImage style="width:70px" class="b-rad" Path="Images/user.jpg"></RadzenImage>
-                        <RadzenText class="d-inline-block" Text="Written By" TextStyle="TextStyle.Caption"></RadzenText>
-                        <RadzenText class="d-inline-block" TextStyle="TextStyle.Subtitle2">Birrell Chariot</RadzenText>
-                        <RadzenText class="d-inline-block"></RadzenText>
-                    </RadzenStack>
-
-                </RadzenCard>
+            <div class="author">
+                <div class="row">
+                    <RadzenCard class="p-3 bg-transparent">
+                        <RadzenStack AlignItems="AlignItems.Center" Orientation="Orientation.Horizontal" Gap="0">
+                            <div>
+                                <RadzenImage style="width:90px;margin:0 !important;" class="rounded-circle"
+                                    Path="Images/user2.jpg">
+                                </RadzenImage>
+                            </div>
+                            <RadzenStack Orientation="Orientation.Vertical">
+                                <div class="mx-3">
+                                    <RadzenText style="margin:0 !important;text-transform: uppercase;" Text="Written By"
+                                        TextStyle="TextStyle.Caption">
+                                    </RadzenText>
+                                    <RadzenText style="margin:0 !important;" TextStyle="TextStyle.Subtitle2">Birrell
+                                        Chariot
+                                    </RadzenText>
+                                    <RadzenText style="margin:0 !important;">Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Iste aperiam veritatis sit fuga, maxime nostrum vero eum.
+                                        Aperiam
+                                        nobis porro, debitis, quam, reprehenderit nemo libero laboriosam expedita a
+                                        aliquam
+                                        vel?</RadzenText>
+                                </div>
+                            </RadzenStack>
+                        </RadzenStack>
+                    </RadzenCard>
+                </div>
             </div>
+            <div class="my-3">
+                <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Responses (10)
+                </RadzenText>
+                <RadzenCard class="p-0 bg-transparent">
+                    <RadzenTextArea Placeholder="Add to discussion" Rows="4" class="w-100" />
+                    <RadzenButton class="b-rad" style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Primary">
+                        Submit
+                    </RadzenButton>
+                    <RadzenButton class="b-rad" style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Dark">
+                        Cancel
+                    </RadzenButton>
+                </RadzenCard>
+
+            </div>
+            @for (int i = 0; i < 5; i++)
+            {
+                <div id="comments" class="row my-35">
+                    <div class="col-1 align-items-center">
+                        <RadzenImage style="width: 40px;margin-top:50%" class="rounded-circle img-fluid"
+                            Path="Images/user.jpg">
+                        </RadzenImage>
+                    </div>
+                    <div class="col-11">
+                        <RadzenCard class="bg-transparent" style="border:1px solid #d5d3d36a">
+                            <RadzenText>Truelock Alric</RadzenText>
+                            <RadzenText>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</RadzenText>
+                            <div class="my-2">
+                                <RadzenButton class="b-rad" ButtonStyle="ButtonStyle.Light" Icon="favorite" Text="96">
+                                </RadzenButton>
+                                <RadzenButton style="text-transform: capitalize;" class="b-rad"
+                                    ButtonStyle="ButtonStyle.Light" Icon="reply" Text="Reply">
+                                </RadzenButton>
+                            </div>
+
+                        </RadzenCard>
+                    </div>
+                </div>
+            }
+            <div class="text-center mt-3">
+                <RadzenButton class="b-rad p-3 w-100" style="text-transform: none;"
+                    Text="View full comments (+117 comments)">
+                </RadzenButton>
+            </div>
+
         </div>
         <div class="col-12 col-lg-4">
             <RadzenCard style="background-color: #F3F4F6;" class="b-rad">
