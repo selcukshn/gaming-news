@@ -1,4 +1,4 @@
-using Application.Mediator.Queries.News.GetHome;
+using Application.Mediator.Queries.News.GetFeatured;
 using Application.Mediator.Queries.News.GetLatest;
 using Application.Mediator.Queries.News.GetTrending;
 using Application.Mediator.Queries.News.GetWithUrl;
@@ -25,10 +25,10 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        [Route("home")]
-        public async Task<IActionResult> GetHome(string url, [FromQuery] int count)
+        [Route("featured")]
+        public async Task<IActionResult> GetFeatured([FromQuery] int count)
         {
-            return Ok(await Mediator.Send(new GetHomeQuery(count)));
+            return Ok(await Mediator.Send(new GetFeaturedQuery(count)));
         }
 
         [HttpGet]

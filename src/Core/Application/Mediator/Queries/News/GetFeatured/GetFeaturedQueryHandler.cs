@@ -4,13 +4,13 @@ using Application.Repository;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Mediator.Queries.News.GetHome
+namespace Application.Mediator.Queries.News.GetFeatured
 {
-    public class GetHomeQueryHandler : GenericHandler<INewsRepository, GetHomeQuery, IEnumerable<GetHomeViewModel>>
+    public class GetFeaturedQueryHandler : GenericHandler<INewsRepository, GetFeaturedQuery, IEnumerable<GetFeaturedViewModel>>
     {
-        public GetHomeQueryHandler(INewsRepository repository, IMapper mapper) : base(repository, mapper) { }
+        public GetFeaturedQueryHandler(INewsRepository repository, IMapper mapper) : base(repository, mapper) { }
 
-        public override async Task<IEnumerable<GetHomeViewModel>> Handle(GetHomeQuery request, CancellationToken cancellationToken)
+        public override async Task<IEnumerable<GetFeaturedViewModel>> Handle(GetFeaturedQuery request, CancellationToken cancellationToken)
         {
             var result = await base.Repository.AsQueryable()
             .Include(e => e.User)
@@ -22,7 +22,7 @@ namespace Application.Mediator.Queries.News.GetHome
             if (result is null)
                 throw new Exception("Öne çıkan içerik bulunamadı");
 
-            return base.Mapper.Map<IEnumerable<GetHomeViewModel>>(result);
+            return base.Mapper.Map<IEnumerable<GetFeaturedViewModel>>(result);
             // return result.Select(e => new GetHomeViewModel()
             // {
             //     Id = e.Id,

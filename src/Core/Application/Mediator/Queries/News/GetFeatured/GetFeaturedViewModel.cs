@@ -1,8 +1,8 @@
 using Application.Models;
 
-namespace Application.Mediator.Queries.News.GetHome
+namespace Application.Mediator.Queries.News.GetFeatured
 {
-    public class GetHomeViewModel
+    public class GetFeaturedViewModel
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

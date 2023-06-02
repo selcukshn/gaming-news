@@ -1,4 +1,4 @@
-using Application.Mediator.Queries.News.GetHome;
+using Application.Mediator.Queries.News.GetFeatured;
 using Application.Mediator.Queries.News.GetLatest;
 using Application.Mediator.Queries.News.GetTrending;
 using AutoMapper;
@@ -17,7 +17,7 @@ namespace Application.Mapper
             .ForMember(e => e.Author, e => e.MapFrom(m => m.User))
             .ForMember(e => e.Categories, e => e.MapFrom(m => m.NewsCategories.Select(s => s.Category)));
 
-            CreateMap<News, GetHomeViewModel>()
+            CreateMap<News, GetFeaturedViewModel>()
             .ForMember(e => e.Author, e => e.MapFrom(m => m.User))
             .ForMember(e => e.Categories, e => e.MapFrom(m => m.NewsCategories.Select(s => s.Category)));
         }
