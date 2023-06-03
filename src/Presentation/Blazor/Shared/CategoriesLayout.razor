@@ -159,27 +159,12 @@
     }
 </style>
 <RadzenLayout style="height:100vh">
-    <RadzenHeader class="d-flex header">
-        <RadzenStack class="header" Orientation="Orientation.Horizontal">
-            <div class="logo main-color">
-                Gaming News
-            </div>
-            <div class="rz-mx-12">
-                <RadzenDropDownDataGrid Placeholder="Categories" AllowClear="true" @bind-Value=value
-                    AllowFiltering="true" Data=@value />
-            </div>
-            <div class="c_navbar mr-l">
-                <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="search"></RadzenIcon>
-                <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="notifications_active">
-                </RadzenIcon>
-                <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="person_outline"></RadzenIcon>
-            </div>
-        </RadzenStack>
-    </RadzenHeader>
+    <HeaderComponent></HeaderComponent>
     <RadzenBody style="padding: 0 ">
         <div>
             @Body
         </div>
+        <FooterComponent></FooterComponent>
     </RadzenBody>
 </RadzenLayout>
 @code {

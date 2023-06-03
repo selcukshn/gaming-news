@@ -176,24 +176,7 @@
     }
 </style>
 <RadzenLayout style="height:100vh">
-    <RadzenHeader class="d-flex header">
-        <RadzenStack class="header" Orientation="Orientation.Horizontal">
-            <div class="logo main-color">
-                Gaming News
-            </div>
-            <div>
-
-            </div>
-            <div class="d-flex">
-                <div class="c_navbar">
-                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="search"></RadzenIcon>
-                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="notifications_active">
-                    </RadzenIcon>
-                    <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="person_outline"></RadzenIcon>
-                </div>
-            </div>
-        </RadzenStack>
-    </RadzenHeader>
+    <HeaderComponent></HeaderComponent>
     <RadzenBody style="padding: 0 !important;margin-top:4.3rem;">
         <div>
             @Body
