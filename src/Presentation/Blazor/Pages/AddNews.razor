@@ -2,11 +2,23 @@
 @page "/addnews"
 @inject DialogService DialogService
 
-<div class="container my-50">
-    <div class="row">
-        <div class="editor">
-            <RadzenHtmlEditor Style="height: 80vh; color: black;"></RadzenHtmlEditor>
-        </div>
+<div style="margin-bottom:50px ;" class="container my-50">
+    <div class="my-2">
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems=AlignItems.Center>
+
+            <RadzenLabel style="color: blaCK;" Text="Enter Title: "></RadzenLabel>
+            <RadzenFormField Style="color:white;" Text="News's Title">
+                <ChildContent>
+                    <RadzenTextBox class="m-0" Style="color:black;" Name="New's Title" />
+                </ChildContent>
+                <Helper>
+                    <RadzenRequiredValidator Style="color:black;" Component="NewsTitle" Text="Title is required." />
+                </Helper>
+            </RadzenFormField>
+        </RadzenStack>
+    </div>
+    <div class="editor">
+        <RadzenHtmlEditor Style="height: 80vh; color: black;"></RadzenHtmlEditor>
     </div>
 </div>
 @code {

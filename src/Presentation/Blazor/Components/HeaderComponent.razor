@@ -1,23 +1,23 @@
-<RadzenHeader class="header">
+@inject TooltipService tooltipService
+<RadzenHeader>
     <div class="row text-center">
         <div class="col-4 logo main-color">
             Gaming News
         </div>
         <div class="col-4 text-center">
-            <RadzenButton onclick="" data-target=".addNews" style="background-color:#47494d !important" class="b-rad"
-                Icon="add" Text="Add News">
-            </RadzenButton>
-            @* <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Center"
-            AlignItems="AlignItems.Center" Gap="0">
-            <RadzenIcon Icon="add" style="color:black;font-size: 32px;"></RadzenIcon>
-            <RadzenLink style="color:black" Path="#">Add News</RadzenLink>
-            </RadzenStack> *@
+
+
         </div>
-        <div class="col-4 c_navbar">
+        <div class="col-4 d-flex align-items-center gap-2">
             <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="search"></RadzenIcon>
             <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="notifications_active">
             </RadzenIcon>
             <RadzenIcon IconStyle="IconStyle.Dark" class="" id="navbar_icon" Icon="person_outline"></RadzenIcon>
+            <RadzenImage style="height: 20px;" class="img-fluid " Path="Images/add.png"></RadzenImage>
         </div>
     </div>
 </RadzenHeader>
+@code {
+
+
+}
