@@ -1,6 +1,6 @@
-namespace Application.Mediator.Queries.Base
+namespace Application.Mediator.Queries.Base.Countable
 {
-    public class CountableQuery
+    public class CountableQuery : ICountableQuery
     {
         private int _count = 5;
         public int Count
