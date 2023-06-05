@@ -1,0 +1,23 @@
+@using Blazor.EndpointHelper
+@using Blazor.EndpointHelper.Components
+@using Blazor.EndpointHelper.Components.Request
+@using Blazor.EndpointHelper.Components.Request.Base
+@layout EHLayout
+@page "/api/endpoints"
+
+
+<EndpointView BaseAddress="https://localhost:7263" EndpointHeader="News">
+    <EndpointBody>
+        <GetRequest RequestName="GetWithUrl" Endpoint="/api/news/{url:string}"
+            Response200="@(new List<GetWithUrlViewModel>())" Response200T="typeof(List<GetWithUrlViewModel>)">
+        </GetRequest>
+        <GetRequest RequestName="GetWithUrl" Endpoint="/api/news/{url:string}"
+            Response200="@(new GetWithUrlViewModel())" Response200T="typeof(GetWithUrlViewModel)">
+        </GetRequest>
+    </EndpointBody>
+</EndpointView>
+
+@code {
+    string name = "name";
+    int count = 1;
+}

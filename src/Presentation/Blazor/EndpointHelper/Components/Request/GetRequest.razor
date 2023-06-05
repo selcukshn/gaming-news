@@ -1,0 +1,115 @@
+@using Request.Base
+@inherits BaseRequest
+
+<style>
+    .response-model {
+        font-size: 0.8rem;
+    }
+
+    .response-header {
+        font-weight: 700;
+    }
+</style>
+
+<div class="col-12 d-flex flex-column gap-2 p-2 border rounded">
+    <h5 class="m-0">@RequestName</h5>
+    <hr class="my-1">
+    <div class="d-flex align-items-center gap-2">
+        <h6 class="px-2 py-1 text-white m-0 rounded" style="background-color: rgb(128, 216, 128); font-size: 0.9rem;">
+            @Method
+        </h6>
+        <p class="m-0 " style="font-size: 0.9rem; color: rgb(66, 66, 66);">@($"{BaseAddress}{Endpoint}")</p>
+    </div>
+    @if (Parameters is not null)
+    {
+        <h6 class="m-0">Parameters</h6>
+        <div class="d-flex gap-2">
+            @foreach (var param in Parameters)
+            {
+                <div class="p-1 border-1">
+                    <span>@param.Key</span>
+                    <span>@param.Value</span>
+                </div>
+            }
+        </div>
+    }
+    <h5 class="m-0">Response</h5>
+    <div class="d-flex justify-content-between">
+        <div>
+            <h6 class="response-header text-success m-0">200</h6>
+            @if (Response200T is not null)
+            {
+                <pre class="response-model">
+                    @JsonConvert.SerializeObject(Activator.CreateInstance(Response200T) ,Formatting.Indented)
+                            </pre>
+            }
+            @if (Response200 is not null)
+            {
+                <pre class="response-model">
+                    @JsonConvert.SerializeObject(Response200,Formatting.Indented)
+                            </pre>
+                @* <span class="me-1 fw-bold" style="font-size: 0.9rem;">Model</span>
+            if (Response200.GetType().Namespace.Split(".").Contains("Generic"))
+            {
+            <span style="font-size: 0.8rem;
+            font-weight:500;">Collection&lt;@(Response200.GetType().GetGenericArguments()[0].Name)&gt;</span>
+            @if(!Response200.GetType().IsPrimitive){
+            <button class="btn btn-outline-dark p-1">&#709;</button>
+            }
+            <div class="response-model">
+            @foreach (var item in Response200.GetType().GetGenericArguments()[0].GetProperties())
+            {
+            <span class="fw-bold me-1">@item.PropertyType.Name</span>
+            <span>@item.Name</span>
+            <br>
+            }
+            </div>
+            }
+            else
+            {
+            <span style="font-size: 0.8rem; font-weight:500;">@Response200.GetType().Name</span>
+            @if(!Response200.GetType().IsPrimitive){
+            <span >&#709;</span>
+            }
+            <pre class="response-model">
+            @JsonConvert.SerializeObject(Response200,Formatting.Indented)
+            </pre>
+            } *@
+
+            }
+            else
+            {
+                <p class="response-model">none</p>
+            }
+        </div>
+        <div>
+            <h6 class="response-header text-warning m-0">404</h6>
+            @if (Response404 is not null)
+            {
+                <pre class="response-model">@JsonConvert.SerializeObject(Response404,Formatting.Indented)</pre>
+            }
+            else
+            {
+                <p class="response-model">none</p>
+            }
+        </div>
+        <div>
+            <h6 class="response-header text-danger m-0">500</h6>
+            @if (Response500 is not null)
+            {
+                <pre class="response-model">@JsonConvert.SerializeObject(Response500,Formatting.Indented)</pre>
+            }
+            else
+            {
+                <p class="response-model">none</p>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        base.Method = RequestMethod.GET;
+    }
+}

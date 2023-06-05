@@ -1,0 +1,11 @@
+<h2>@EndpointHeader</h2>
+<CascadingValue Value="@BaseAddress">
+    @EndpointBody
+</CascadingValue>
+
+
+@code {
+    [Parameter] public string EndpointHeader { get; set; }
+    [Parameter] public RenderFragment EndpointBody { get; set; }
+    [Parameter] public string BaseAddress { get; set; }
+}
