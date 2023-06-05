@@ -36,12 +36,17 @@
                 </div>
                 <div class="col-8">
                     <RadzenTextArea id="title-text-area" Placeholder="New post title here..." class=" w-100"></RadzenTextArea>
+                    <RadzenTextArea style="border: none;" class="w-100" Placeholder="Add tags(0/5)..."></RadzenTextArea>
                 </div>
                
                 <div class="editor col-8">
                     <RadzenHtmlEditor class="w-100" Style="height: 80vh; color: black;"></RadzenHtmlEditor>
                 </div>
             </RadzenStack>
+            <div class="my-4">
+                 <RadzenButton class="b-rad" style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Primary" Text="publish"></RadzenButton>
+            <RadzenButton class="b-rad" Variant="Variant.Filled" style="text-transform:none;" ButtonStyle="ButtonStyle.Light" Text="Save draft"></RadzenButton>
+            </div>
         </RadzenCard>
     </div>
 </div>
