@@ -1,26 +1,66 @@
 @layout HomeLayout
 @page "/addnews"
 @inject DialogService DialogService
+@inject NotificationService NotificationService
 
-<div style="margin-bottom:50px ;" class="container my-50">
-    <div class="my-2">
-        <RadzenStack Orientation="Orientation.Horizontal" AlignItems=AlignItems.Center>
-
-            <RadzenLabel style="color: blaCK;" Text="Enter Title: "></RadzenLabel>
-            <RadzenFormField Style="color:white;" Text="News's Title">
-                <ChildContent>
-                    <RadzenTextBox class="m-0" Style="color:black;" Name="New's Title" />
-                </ChildContent>
-                <Helper>
-                    <RadzenRequiredValidator Style="color:black;" Component="NewsTitle" Text="Title is required." />
-                </Helper>
-            </RadzenFormField>
-        </RadzenStack>
+<div class="container my-50">
+    <div class="row justify-content-center align-items-center">
+        <RadzenCard class="b-rad text-center">
+                <RadzenText class="mt-4" Text="Add a cover image"></RadzenText>
+            <RadzenStack JustifyContent=JustifyContent.Center AlignItems="AlignItems.Center">
+                <div class="col-8 p-5 b-rad" style="border: 2px dashed gray">
+                    <RadzenIcon style="color: gray;" Icon="collections"/>
+                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Upload a file</RadzenText>
+                    <RadzenUpload Multiple="true" Accept="image/*"
+                        Url="upload/multiple" Progress=@(args => OnProgress(args, "Images only upload")) class="w-50" />
+                </div>
+                <div class="col-8">
+                    <RadzenButton  data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: black;" Text="Choose Categories" ButtonStyle="ButtonStyle.Light" Variant="Variant.Outlined"></RadzenButton>
+                    <div class="modal " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">Categories</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+    <RadzenButton>Deneme</RadzenButton>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
-    <div class="editor">
-        <RadzenHtmlEditor Style="height: 80vh; color: black;"></RadzenHtmlEditor>
+  </div>
+</div>
+                </div>
+                <div class="col-8">
+                    <RadzenTextArea id="title-text-area" Placeholder="New post title here..." class=" w-100"></RadzenTextArea>
+                </div>
+               
+                <div class="editor col-8">
+                    <RadzenHtmlEditor class="w-100" Style="height: 80vh; color: black;"></RadzenHtmlEditor>
+                </div>
+            </RadzenStack>
+        </RadzenCard>
     </div>
 </div>
+
 @code {
+    void OnClick(RadzenSplitButtonItem item, string buttonName)
+    {
+        if (item != null)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = "SplitButton Item Clicked", Detail = $"{buttonName}, item with value {item.Value} clicked" });
+        }
+        else
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = "SplitButton Clicked", Detail = $"{buttonName} clicked" });
+        }
+    }
+    void OnProgress(UploadProgressArgs args, string name)
+    {
+
+    }
 
 }
