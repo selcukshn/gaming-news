@@ -1,5 +1,3 @@
-using Application.Mediator.Queries.Base;
-using Application.Models;
 using Application.Repository;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;

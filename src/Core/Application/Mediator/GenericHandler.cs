@@ -2,7 +2,7 @@ using Application.Repository.Base;
 using AutoMapper;
 using MediatR;
 
-namespace Application.Mediator.Queries.Base
+namespace Application.Mediator
 {
     public abstract class GenericHandler<TRepository, TRequest, TResponse> : IRequestHandler<TRequest, TResponse>
     where TRepository : IBaseRepository
