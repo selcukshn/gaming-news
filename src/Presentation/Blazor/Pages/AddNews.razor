@@ -5,64 +5,62 @@
 
 <div class="container my-50">
     <div class="row justify-content-center align-items-center">
-        <RadzenCard class="b-rad text-center">
-                <RadzenText class="mt-4" Text="Add a cover image"></RadzenText>
-            <RadzenStack JustifyContent=JustifyContent.Center AlignItems="AlignItems.Center">
-                <div class="col-8 p-5 b-rad" style="border: 2px dashed gray">
-                    <RadzenIcon style="color: gray;" Icon="collections"/>
-                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Upload a file</RadzenText>
-                    <RadzenUpload Multiple="true" Accept="image/*"
-                        Url="upload/multiple" Progress=@(args => OnProgress(args, "Images only upload")) class="w-50" />
+        <RadzenCard class="b-rad text-center p-0">
+            <RadzenText class="mt-4" Text="Add a cover image"></RadzenText>
+            <RadzenStack JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Center">
+                <div class="col-8 p-3 b-rad" style="border: 2px dashed gray">
+                    <RadzenIcon style="color: gray;" Icon="collections" />
+                    <RadzenText TextStyle="TextStyle.Subtitle2" TagName="TagName.H3" Text="Upload a file"></RadzenText>
+                    <RadzenUpload Multiple="true" Accept="image/*" Url="upload/multiple"
+                        Progress="@(args => OnProgress(args, "Images only upload"))" class="w-50" />
                 </div>
                 <div class="col-8">
-                    <RadzenButton  data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: black;" Text="Choose Categories" ButtonStyle="ButtonStyle.Light" Variant="Variant.Outlined"></RadzenButton>
-                    <div class="modal " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title" id="exampleModalLabel">Categories</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-    <RadzenButton>Deneme</RadzenButton>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+                    <RadzenButton data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: black;"
+                        Text="Choose Categories" ButtonStyle="ButtonStyle.Light" Variant="Variant.Outlined">
+                    </RadzenButton>
+
                 </div>
                 <div class="col-8">
-                    <RadzenTextArea id="title-text-area" Placeholder="New post title here..." class=" w-100"></RadzenTextArea>
+                    <RadzenTextArea id="title-text-area" Placeholder="New post title here..." class=" w-100">
+                    </RadzenTextArea>
                     <RadzenTextArea style="border: none;" class="w-100" Placeholder="Add tags(0/5)..."></RadzenTextArea>
                 </div>
-               
-                <div class="editor col-8">
+                <div class="editor col-12 my-2">
+                    <hr style="color: gray;">
+                    <RadzenText style="font-size:36px;color: gray;letter-spacing: 0.01px;word-spacing: 20px;"
+                        TextStyle="TextStyle.Overline" Text="Post . Content . Area"></RadzenText>
                     <RadzenHtmlEditor class="w-100" Style="height: 80vh; color: black;"></RadzenHtmlEditor>
                 </div>
             </RadzenStack>
+            <hr style="color: gray;">
             <div class="my-4">
-                 <RadzenButton class="b-rad" style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Primary" Text="publish"></RadzenButton>
-            <RadzenButton class="b-rad" Variant="Variant.Filled" style="text-transform:none;" ButtonStyle="ButtonStyle.Light" Text="Save draft"></RadzenButton>
+                <RadzenButton class="b-rad" style="text-transform: capitalize;" ButtonStyle="ButtonStyle.Primary"
+                    Text="publish"></RadzenButton>
+                <RadzenButton class="b-rad" Variant="Variant.Filled" style="text-transform:none;"
+                    ButtonStyle="ButtonStyle.Light" Text="Save draft"></RadzenButton>
             </div>
         </RadzenCard>
     </div>
 </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @code {
-    void OnClick(RadzenSplitButtonItem item, string buttonName)
-    {
-        if (item != null)
-        {
-            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = "SplitButton Item Clicked", Detail = $"{buttonName}, item with value {item.Value} clicked" });
-        }
-        else
-        {
-            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = "SplitButton Clicked", Detail = $"{buttonName} clicked" });
-        }
-    }
     void OnProgress(UploadProgressArgs args, string name)
     {
 
