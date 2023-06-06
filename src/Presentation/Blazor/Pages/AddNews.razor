@@ -15,10 +15,9 @@
                         Progress="@(args => OnProgress(args, "Images only upload"))" class="w-50" />
                 </div>
                 <div class="col-8">
-                    <RadzenButton data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: black;"
-                        Text="Choose Categories" ButtonStyle="ButtonStyle.Light" Variant="Variant.Outlined">
-                    </RadzenButton>
-
+                    <RadzenSplitButton class="b-rad" ButtonStyle="ButtonStyle.Light" data-bs-toggle="modal" data-bs-target="#exampleModal" Text="Choose Category"
+                        Shade="Shade.Lighter" Variant="Variant.Outlined">
+                    </RadzenSplitButton>
                 </div>
                 <div class="col-8">
                     <RadzenTextArea id="title-text-area" Placeholder="New post title here..." class=" w-100">
@@ -42,15 +41,24 @@
         </RadzenCard>
     </div>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+<div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">Choose Categories(5/5)</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
+                <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-2 row-cols-1 g-3">
+                @for (int i = 0; i < 14; i++)
+                {
+                    <div class="col">
+                    <RadzenButton style="border:1px solid #F4F3F6" ButtonStyle="@buttontype" Variant="Variant.Outlined" Shade="Shade.Darker" class="w-100 b-rad" Image="Images/40x40.jpg" Text="Meliodas" Click="@(()=>{
+                        buttontype = buttontype == ButtonStyle.Light ? ButtonStyle.Primary : ButtonStyle.Light;
+                    })" ></RadzenButton>
+                    </div>
+                }
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -61,9 +69,9 @@
 </div>
 
 @code {
+    ButtonStyle buttontype = ButtonStyle.Light;
     void OnProgress(UploadProgressArgs args, string name)
     {
 
     }
-
 }
