@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistance.Context;
 
@@ -11,9 +12,10 @@ using Persistance.Context;
 namespace Persistance.Migrations
 {
     [DbContext(typeof(GamingNewsContext))]
-    partial class GamingNewsContextModelSnapshot : ModelSnapshot
+    [Migration("20230629102021_UserDataSeed")]
+    partial class UserDataSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

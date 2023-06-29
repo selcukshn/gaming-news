@@ -11,9 +11,9 @@ namespace Application.Mediator.Queries.News.GetNews
         public override async Task<List<GetNewsViewModel>> Handle(GetNewsQuery request, CancellationToken cancellationToken)
         {
             var result = base.Repository.AsQueryable()
+            .Include(e => e.User)
             .Include(e => e.NewsCategories).ThenInclude(e => e.Category)
-            .Include(e => e.NewsTags).ThenInclude(e => e.Tag)
-            .Include(e => e.User);
+            .Include(e => e.NewsTags).ThenInclude(e => e.Tag);
 
             if (request.AfterDate is not null)
                 result.Where(e => e.CreatedDate < request.AfterDate);
@@ -29,6 +29,7 @@ namespace Application.Mediator.Queries.News.GetNews
                 result.Where(e => e.Title.Contains(request.Search));
 
             var news = await result.OrderByDescending(e => e.CreatedDate).Skip(request.Skip).Take(request.Count).ToListAsync();
+
             if (news is null)
                 throw new Exception("Bu parametrelere uygun kayıt bulunamadı");
             return base.Mapper.Map<List<GetNewsViewModel>>(news);

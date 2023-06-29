@@ -1,4 +1,5 @@
 using System.Reflection;
+using Application.Extensions;
 using Domain;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,12 +13,35 @@ namespace Persistance.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Server=SELCUK\\SQLEXPRESS;Initial Catalog=GamingNews;Integrated Security=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-N0N03AG;Initial Catalog=GamingNews;Integrated Security=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.Entity<User>().HasData(new User()
+            {
+                Id = Guid.NewGuid(),
+                Email = "admin@gmail.com",
+                Biography = "-",
+                FirstName = "admin",
+                Image = "-",
+                LastName = "admin",
+                Password = "asdasd",
+                Username = "admin"
+            });
+            modelBuilder.Entity<Tag>().HasData(new Tag()
+            {
+                Id = Guid.NewGuid(),
+                Title = "test tag",
+                Url = "test tag".ToUniqueUrl()
+            });
+            modelBuilder.Entity<Category>().HasData(new Category()
+            {
+                Id = Guid.NewGuid(),
+                Title = "test category",
+                Url = "test category".ToUniqueUrl()
+            });
         }
 
         public DbSet<Category> Categories { get; set; }

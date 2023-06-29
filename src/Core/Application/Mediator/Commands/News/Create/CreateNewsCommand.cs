@@ -11,9 +11,9 @@ namespace Application.Mediator.Commands.News.Create
         public string Description { get; set; }
         public bool Featured { get; set; }
 
-        public Guid UserId { get; set; }
+        // public Guid UserId { get; set; }
 
-        public ICollection<NewsCategory> NewsCategories { get; set; }
-        public ICollection<NewsTag> NewsTags { get; set; }
+        // public ICollection<NewsCategory> NewsCategories { get; set; }
+        // public ICollection<NewsTag> NewsTags { get; set; }
     }
 }

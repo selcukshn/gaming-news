@@ -13,7 +13,7 @@ namespace Application.Mediator.Queries.News.GetNews
         public int LikeCount { get; set; }
         public int CommentCount { get; set; }
         public DateTime? CreatedDate { get; set; }
-        public NewsDetailUserViewModel Author { get; set; }
+        public NewsDetailUserViewModel? Author { get; set; }
         public IEnumerable<NewsCategoryViewModel> Categories { get; set; }
         public IEnumerable<NewsTagViewModal> Tags { get; set; }
     }

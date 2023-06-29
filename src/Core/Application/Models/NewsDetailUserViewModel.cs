@@ -7,5 +7,6 @@ namespace Application.Models
         public string Username { get; set; }
         public string Image { get; set; }
         public string Biography { get; set; }
+        public NewsDetailUserViewModel() { }
     }
 }

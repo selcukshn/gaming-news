@@ -6,10 +6,10 @@ namespace Application.Mediator.Commands.News.Create
     {
         public CreateNewsValidator()
         {
-            RuleFor(e => e.UserId)
-            .NotEmpty().WithMessage("{PropertyName} boş olamaz")
-            .NotNull().WithMessage("{PropertyName} boş olamaz")
-            .WithName("Yazar");
+            // RuleFor(e => e.UserId)
+            // .NotEmpty().WithMessage("{PropertyName} boş olamaz")
+            // .NotNull().WithMessage("{PropertyName} boş olamaz")
+            // .WithName("Yazar");
 
             RuleFor(e => e.Description)
             .NotEmpty().WithMessage("{PropertyName} boş olamaz")

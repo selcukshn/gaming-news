@@ -15,8 +15,9 @@ namespace Application.Mapper
         public NewsProfile()
         {
             CreateMap<News, GetNewsViewModel>()
-           .ForMember(e => e.Categories, e => e.MapFrom(m => m.NewsCategories.Select(s => s.Category)))
-           .ForMember(e => e.Tags, e => e.MapFrom(m => m.NewsTags.Select(s => s.Tag)));
+            .ForMember(e => e.Author, e => e.MapFrom(m => m.User))
+            .ForMember(e => e.Categories, e => e.MapFrom(m => m.NewsCategories.Select(s => s.Category)))
+            .ForMember(e => e.Tags, e => e.MapFrom(m => m.NewsTags.Select(s => s.Tag)));
 
             CreateMap<News, GetMostLikedViewModel>()
             .ForMember(e => e.Categories, e => e.MapFrom(m => m.NewsCategories.Select(s => s.Category)))
@@ -34,7 +35,7 @@ namespace Application.Mapper
             .ForMember(e => e.Categories, e => e.MapFrom(m => m.NewsCategories.Select(s => s.Category)));
 
             CreateMap<CreateNewsCommand, News>()
-            .ForMember(e => e.Url, e => e.MapFrom(m => m.Title.ToUniqueUrl()));
+            .ForMember(e => e.Url, e => e.MapFrom(m => m.Title.ToUniqueUrl())).ReverseMap();
         }
     }
 }
