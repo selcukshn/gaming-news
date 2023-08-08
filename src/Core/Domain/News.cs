@@ -11,10 +11,8 @@ namespace Domain
         public string Description { get; set; }
         public DateTime? CreatedDate { get; set; }
         public bool Featured { get; set; }
-
         public Guid UserId { get; set; }
         public virtual User User { get; set; }
-
         public virtual ICollection<NewsCategory> NewsCategories { get; set; }
         public virtual ICollection<NewsTag> NewsTags { get; set; }
         public virtual ICollection<NewsComment> NewsComments { get; set; }

@@ -13,7 +13,7 @@ namespace Persistance.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Server=DESKTOP-N0N03AG;Initial Catalog=GamingNews;Integrated Security=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-OT8MC7K\\SQLEXPRESS;Initial Catalog=GamingNews;Integrated Security=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

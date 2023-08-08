@@ -15,7 +15,7 @@ namespace Application.Mapper
         public NewsProfile()
         {
             CreateMap<News, GetNewsViewModel>()
-            .ForMember(e => e.Author, e => e.MapFrom(m => m.User))
+            // .ForMember(e => e.Author, e => e.MapFrom(m => m.User))
             .ForMember(e => e.Categories, e => e.MapFrom(m => m.NewsCategories.Select(s => s.Category)))
             .ForMember(e => e.Tags, e => e.MapFrom(m => m.NewsTags.Select(s => s.Tag)));
 
